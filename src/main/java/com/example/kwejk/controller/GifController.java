@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,6 +27,14 @@ public class GifController {
         //2 przekazanie gifa do view
         modelMap.put("gifs",gifs);
         return "home";
+    }
+
+    @RequestMapping("/favorites")
+    public String gifFavorites (ModelMap modelMap){
+        List<Gif> gifs = new ArrayList<>();
+        gifs = gifRepository.getFavs();
+        modelMap.put("gifs", gifs);
+        return "favorites";
     }
 
 
