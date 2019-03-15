@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-@Component
+@Component // adnotacja Component pozwala nam na wykorzystanie adnotacji Autowired, czyli wstrzykniecie zaleznosci do controllera
 public class GifRepository {
 
 
